@@ -16,12 +16,10 @@ export default class IssuePageComponent {
 
   issueNumber = toSignal<string>(
     this.route.paramMap.pipe(
-      map(
-        (params) => params.get('number') ?? '',
-        tap((numberIssue: string) => {
-          this.issueService.setIssueNumber(numberIssue);
-        })
-      )
+      map((params) => params.get('number') ?? ''),
+      tap((numberIssue: string) => {
+        this.issueService.setIssueNumber(numberIssue);
+      })
     )
   );
 

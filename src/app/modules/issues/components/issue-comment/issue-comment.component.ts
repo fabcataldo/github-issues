@@ -1,4 +1,4 @@
-import { Component, input, OnInit } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { GithubIssue } from '../../interfaces/github-issues.interface';
 import { MarkdownModule } from 'ngx-markdown';
 
@@ -8,10 +8,6 @@ import { MarkdownModule } from 'ngx-markdown';
   standalone: true,
   templateUrl: './issue-comment.component.html',
 })
-export class IssueCommentComponent implements OnInit {
+export class IssueCommentComponent {
   issue = input.required<GithubIssue>();
-  ngOnInit(): void {
-    console.log('ssiue');
-    console.log(this.issue());
-  }
 }

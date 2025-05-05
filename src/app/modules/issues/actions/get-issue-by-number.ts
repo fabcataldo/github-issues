@@ -8,9 +8,13 @@ const GITHUB_TOKEN = environment.githubToken;
 export const getIssueByNumber = async (
   issueNumber: string
 ): Promise<GithubIssue> => {
+  //el sleep es solamente para demostrar que, aunque esté
+  //tanstack, con las técnicas de obtención de datos antes
+  //que el usuario haga click en el dato que quiere ver,
+  //ya el dato se carga, entonces se le brinda una ux
+  //más rápida y mejor, pero por eso
   await sleep(1500);
 
-  console.log('entrooo');
   try {
     const resp = await fetch(`${BASE_URL}/issues/${issueNumber}`, {
       headers: {
@@ -19,8 +23,6 @@ export const getIssueByNumber = async (
     });
     if (!resp.ok) throw "Can't load issues";
 
-    console.log('getissuebynumber');
-    console.log(resp);
     const issue: GithubIssue = await resp.json();
 
     return issue;
