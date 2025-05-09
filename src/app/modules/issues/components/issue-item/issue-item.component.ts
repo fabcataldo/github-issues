@@ -17,11 +17,13 @@ export class IssueItemComponent {
     return this.issue().state === State.Open;
   }
 
+  // get potential data from user hovering on an issue
+  //, for anticipating user's future visualization of the issue
   prefetchData() {
-    //tecnica prefetch
+    //prefetch technique
     // this.issueService.prefetchIssue(this.issue().number.toString());
 
-    //tecnica setQueryData
+    //setQueryData technique
     this.issueService.setIssueData(this.issue());
   }
 }
