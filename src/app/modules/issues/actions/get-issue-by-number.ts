@@ -13,7 +13,7 @@ export const getIssueByNumber = async (
   //que el usuario haga click en el dato que quiere ver,
   //ya el dato se carga, entonces se le brinda una ux
   //más rápida y mejor, pero por eso
-  await sleep(1500);
+  // await sleep(1500);
 
   try {
     const resp = await fetch(`${BASE_URL}/issues/${issueNumber}`, {
@@ -21,12 +21,12 @@ export const getIssueByNumber = async (
         Authorization: `Bearer ${GITHUB_TOKEN}`,
       },
     });
-    if (!resp.ok) throw "Can't load issues";
+    if (!resp.ok) throw `Can't load issue ${issueNumber}`;
 
     const issue: GithubIssue = await resp.json();
 
     return issue;
   } catch (error) {
-    throw "Can't load issue";
+    throw `Can't load issue ${issueNumber}`;
   }
 };

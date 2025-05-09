@@ -13,7 +13,7 @@ export const getIssues = async (
   //que el usuario haga click en el dato que quiere ver,
   //ya el dato se carga, entonces se le brinda una ux
   //más rápida y mejor, pero por eso
-  await sleep(1500);
+  // await sleep(1500);
 
   const params = new URLSearchParams();
   params.append('state', state);

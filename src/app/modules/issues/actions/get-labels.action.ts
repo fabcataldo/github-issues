@@ -10,7 +10,7 @@ export const getLabels = async (): Promise<GithubLabel[]> => {
   //que el usuario haga click en el dato que quiere ver,
   //ya el dato se carga, entonces se le brinda una ux
   //más rápida y mejor, pero por eso
-  await sleep(1500);
+  // await sleep(1500);
 
   try {
     const resp = await fetch(`${BASE_URL}/labels`, {

@@ -12,10 +12,8 @@ export const getIssueCommentsByNumber = async (
   //que el usuario haga click en el dato que quiere ver,
   //ya el dato se carga, entonces se le brinda una ux
   //más rápida y mejor, pero por eso
-  await sleep(1500);
+  // await sleep(1500);
 
-  console.log('entrooo');
-  console.log(issueNumber);
   try {
     const resp = await fetch(`${BASE_URL}/issues/${issueNumber}/comments`, {
       headers: {
@@ -28,6 +26,6 @@ export const getIssueCommentsByNumber = async (
 
     return issues;
   } catch (error) {
-    throw "Can't load issue";
+    throw "Can't load issue comments";
   }
 };
